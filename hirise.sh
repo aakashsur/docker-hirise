@@ -1,11 +1,22 @@
+#!/usr/bin/bash
 
 #############################
 #
 #specify the input files:
 #
-BAMS=(examples/human_chr22_chicago_lib1.bam examples/human_chr22_chicago_lib2.bam)
-INPUT_FASTA=examples/human_chr22_input_contigs.fa 
-SHOTGUN_BAM=examples/human_chr22_shotgun.bam
+while getopts b:f:s flag
+do
+    case "${flag}" in
+            i) BAMS=${OPTARG}
+                    ;;
+            o) INPUT_FASTA=${OPTARG}
+                    ;;
+            s) SHOTGUN_BAM=${OPTARG}
+                    ;;
+            *) echo "Invalid option: -$flag" ;;
+    esac
+done
+
 #
 #############################
 
