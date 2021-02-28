@@ -1,23 +1,13 @@
 #!/usr/bin/bash
 
 #############################
-#
-#specify the input files:
-#
-while getopts b:f:s flag
-do
-    case "${flag}" in
-            i) BAMS=${OPTARG}
-                    ;;
-            o) INPUT_FASTA=${OPTARG}
-                    ;;
-            s) SHOTGUN_BAM=${OPTARG}
-                    ;;
-            *) echo "Invalid option: -$flag" ;;
-    esac
-done
 
-#
+# Add Flags
+
+BAMS=$1
+INPUT_FASTA=$2
+SHOTGUN_BAM=$3
+
 #############################
 
 #### 
