@@ -383,7 +383,8 @@ def pledge_singletons2(g,sg,thresh=2):
     comp={}
     for c in nx.connected_components(sg):
         ccn+=1
-        if len(c)==1: singletons.append(c[0])
+        print (type(c))
+        if len(c)==1: singletons.append(list(c)[0])
         for cc in c: comp[cc]=ccn
     for s in singletons:
         total_weight_by_comp={}
