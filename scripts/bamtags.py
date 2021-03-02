@@ -11,19 +11,21 @@ class BamTags(object):
 
     @staticmethod
     def mate_mapq(line):
-        try:
-            return line.opt("xm")
-        except KeyError:
-            return line.opt("MQ")
+        if line.has_tag('XM'):
+            return line.get_tag('XM')
+        elif line.has_tag('MQ'):
+            return line.get_tag('MQ')
+        else:
+            return KeyError
 
     @staticmethod
     def mate_start(line):
-        return line.opt("xs")
+        return line.get_tag("XS")
 
     @staticmethod
     def orientation(line):
-        return line.opt("xt")
+        return line.get_tag("XT")
 
     @staticmethod
     def junction(line):
-        return line.opt("xj")
+        return line.get_tag("XJ")

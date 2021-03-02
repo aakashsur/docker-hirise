@@ -54,5 +54,5 @@ if __name__=="__main__":
             if x<min_i: min_i=x
         f.close()
 
-    for i in range(min_i,max_i+1):
+    for i in range(int(min_i),int(max_i+1)):
         print(i, s1.get(i,0), s2.get(i,0))
