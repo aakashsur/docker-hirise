@@ -6,7 +6,9 @@
 
 BAMS=$1
 INPUT_FASTA=$2
-SHOTGUN_BAM=$3
+SHOTGUN_BAM=$1
+
+# We double dip on the BAM since I don't want to actually provide a shotgun bam file. 
 
 #############################
 
