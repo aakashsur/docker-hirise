@@ -1285,14 +1285,22 @@ falls in a gap between contigs, the linkage is broken.  If x falls in a contig, 
             next_nodes= g.neighbors(e2) 
             prev_nodes= g.predecessors(e1) 
 #            print(prev_nodes)
-            if len(next_nodes)>1: 
+            if len(list(next_nodes))>1: 
                 raise Exception 
-            if len(prev_nodes)>1: 
+            if len(list(prev_nodes))>1: 
                 raise Exception 
             next_node=False
             prev_node=False
-            if next_nodes: next_node = next_nodes[0]
-            if prev_nodes: prev_node = prev_nodes[0]
+            
+            if len(list(next_nodes)) == 0:
+                continue
+            if len(list(previous_nodes)) == 0:
+                continue
+
+            if next_nodes:
+                next_node = list(next_nodes)[0]
+            if prev_nodes:
+                prev_node = list(prev_nodes)[0]
             g.remove_edge(e1,e2)
 
             #print(e1,e2,edge_breaks[e1,e2],scaffold[e1[0],e1[1]],next_node,prev_node)

@@ -114,7 +114,7 @@ def update_end_distance(end_distance,n,g):
         if (not m in end_distance) or end_distance[m]>x: end_distance[m]=x
         
         seen[m]=True
-        if len(g.neighbors(m))>2:
+        if len(list(g.neighbors(m)))>2:
             print("topology error:",m,list(g.neighbors(m)))
             print(math.log(-1.0))
         for l in g.neighbors(m):
@@ -205,7 +205,7 @@ if __name__=="__main__":
             if c[0]=="#edge:":
                 at=eval(" ".join(c[3:]))
                 a,b=c[1],c[2]
-                g.add_edge(a,b,at)
+                g.add_edge(a,b,**at)
                 if not at['contig']:
                     linked[a]=1
                     linked[b]=1

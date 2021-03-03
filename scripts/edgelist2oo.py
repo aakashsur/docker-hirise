@@ -24,8 +24,7 @@ def edges2oo(f):
             c = l.strip().split()
             v=eval(" ".join(c[3:]))
             if v['contig']: ll[c[1][:-2]]=v['length']
-            print (v)
-            g.add_edge(c[1],c[2],v)
+            g.add_edge(c[1],c[2],**v)
         if l[:3]=="cc:": #continue
             c = l.strip().split()
             scn=int(c[1])
