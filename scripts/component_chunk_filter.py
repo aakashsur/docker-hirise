@@ -402,7 +402,7 @@ def pledge_singletons2(g,sg,thresh=2):
         if len(links_by_comp)==0: continue
         if len(links_by_comp)==1 or links_by_comp[0][1]==links_by_comp[1][1]:
             n = exemplar_by_comp[links_by_comp[0][1]]
-            sg.add_edge( s, n, {'weight': -1} )
+            sg.add_edge( s, n, **{'weight': -1} )
             
 
 
@@ -429,7 +429,7 @@ def pledge_singletons(g,sg,min_combined_weight,min_delta):
             delta = total_weight_by_comp[ncomps[0]]-total_weight_by_comp[ncomps[1]]
         print("#pledge_stat:",best,delta,s,exemplar_by_comp[ncomps[0]])
         if best >= min_combined_weight and delta >= min_delta:
-            sg.add_edge( s, exemplar_by_comp[ncomps[0]], {'weight': -1} )
+            sg.add_edge( s, exemplar_by_comp[ncomps[0]], **{'weight': -1} )
 
 
 

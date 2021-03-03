@@ -154,7 +154,7 @@ if __name__=="__main__":
         c=l.strip().split()
         if c[0]=="#edge:":
             ht=eval(" ".join(c[3:]))
-            g.add_edge(c[1],c[2],ht)
+            g.add_edge(c[1],c[2],**ht)
             if not ht['contig']:
                 linked[c[1]]=c[2]
                 linked[c[2]]=c[1]

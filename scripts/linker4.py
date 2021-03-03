@@ -169,7 +169,7 @@ if __name__=="__main__":
                     g.add_edge(s+".3",s+".5",{"contig":True, "length":ll[s]})
             if c[0]=="#edge:":
                 ht=eval(" ".join(c[3:]))
-                g.add_edge(c[1],c[2],ht)
+                g.add_edge(c[1],c[2],**ht)
                 sb,e=c[1][:-2],c[1][-1:]
                 
                 oslen[oscaffold.get(sb,sb)] = oslen.get(oscaffold.get(sb,sb),0)+ht['length']

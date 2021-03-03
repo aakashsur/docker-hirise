@@ -90,7 +90,7 @@ class ScaffoldEdit(object):
             links[a]=b
             links[b]=a
 #            g.add_edge(a,b,weight=self.score)
-            g.add_edge(a,b, {'length': default_gapsize, 'contig': False} )
+            g.add_edge(a,b, **{'length': default_gapsize, 'contig': False} )
             merge_components(a,b,ccd)
             if not (a,b) in links: isv=False
 

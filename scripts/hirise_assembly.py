@@ -120,7 +120,7 @@ class HiriseAssembly:
         #y=int(y)
         #leng=int(leng)
 #        y=min(y,leng)
-        seq = self.ocontig_fa.fetch(ocontig,x-1,y).decode()
+        seq = self.ocontig_fa.fetch(ocontig,x-1,y)
         return(seq)
 
     def contig_length(self,contig):

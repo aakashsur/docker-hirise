@@ -394,8 +394,6 @@ parallel_breaker.py -i hirise_iter_0.hra -o chicago_weak_segs_iter0_part0.out -t
 cat chicago_weak_segs_iter0_part0.out chicago_weak_segs_iter0_part1.out chicago_weak_segs_iter0_part2.out chicago_weak_segs_iter0_part3.out chicago_weak_segs_iter0_part4.out chicago_weak_segs_iter0_part5.out chicago_weak_segs_iter0_part6.out chicago_weak_segs_iter0_part7.out > chicago_weak_segs_iter0.out
 break_playout.py -T 0.0 -t 0.0 -i hirise_iter_0.out -o hirise_iter_broken_0.out -b chicago_weak_segs_iter0.out > hirise_iter_broken_0.log
 
-exit
-
 set_layout.py -i assembly1.hra -o r0.hra -L hirise_iter_broken_0.out
 if [ ! -e  hirise_iter_broken_links_0 ] ; then mkdir hirise_iter_broken_links_0 ; fi ; export_links.py -q 50 -i r0.hra -c 10 -C 16 > hirise_iter_broken_links_0/10.links
 if [ ! -e  hirise_iter_broken_links_0 ] ; then mkdir hirise_iter_broken_links_0 ; fi ; export_links.py -q 50 -i r0.hra -c 14 -C 16 > hirise_iter_broken_links_0/14.links

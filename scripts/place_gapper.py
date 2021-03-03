@@ -55,7 +55,7 @@ if __name__=="__main__":
     parser.add_argument('-K','--kmer',default=51,type=int)
 
     parser.add_argument('-f','--fasta',required=True)
-    parser.add_argument('-r','--region',required=False,default=False)
+    parser.add_argument('-r','--region',required=False,default=None)
     parser.add_argument('-A','--end_threshold',default=25.0,type=float)
     parser.add_argument('-B','--support_cutoff',default=10.0,type=float)
     parser.add_argument('-R','--range_cutoff',default=200000.0,type=float)
